@@ -1,9 +1,10 @@
 ### Live Website (feel free to signup, make posts and comment on posts too!)
-[Website Link](https://photo-media-share.herokuapp.com/)
+[Website Link](https://photo-website-share.herokuapp.com/)
 
-### Notes
-Because of many issues with Django and Heroku, there were many unnecessary commits so I decided to make a new git repo. Unfortunately, I've lost many of my commits however some key features to the website that I've built include: 
+### Notes (This is a Backend project)
+Because of many issues with Git and Heroku CLI, there were many unnecessary commits so I decided to make a new git repo with all the files of this project. Unfortunately, I've lost many of my commits however some key features to the website that I've built include: 
 - Custom User Model
+- Relational Database
 - User Authentication (Signup, Login, Logout)
 - CRUD
 - Image rendering
@@ -16,16 +17,18 @@ Because of many issues with Django and Heroku, there were many unnecessary commi
 - Python 3.8.3
 - Django 3.0.7
 - Pillow 
-- django-filter 
-- SQLite 
+- django-filter (search filter)
+- gunicorn (Web Server Gateway Interface HTTP server)
+- psycopg2 (PostgreSQL database adapter)
+- SQLite (testing)
+- PostgreSQL (deployment)
 
 ### Cloud
 
-- Heroku
-- WhiteNoise
+- Heroku (deployment)
+- AWS S3 (static file storage)
 
 ### Frontend
 
 - HTML/CSS
 - BootstrapCDN
-- django-crispy-forms 
