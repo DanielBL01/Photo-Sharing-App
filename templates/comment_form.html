@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}New Post{% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <h2>Make a comment</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ comment|crispy }}
+            <a href="{% url 'home' %}">Cancel</a>
+            <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+    </div>
+{% endblock content %}

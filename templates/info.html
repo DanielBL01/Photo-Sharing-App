@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}New Post{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Website functionalities</h6>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>The homepage will show the latest 25 posts made by any user at one time</li>
+                    <li>A user is able to filter and search a post using keywords to match titles to any number of posts made by any user</li>
+                    <li>A user is given the option to comment any number of times on any given post, including their own posts</li>
+                    <li>If a staff user comments, it will be indicated with (admin)</li>
+                    <li>Only the user who created the post will see options to either delete their post along with all the comments regarding that post or update the post's title and/or description</li>
+                    <li>A user is also allowed to update the title and/or description any number of times</li>
+                    <li>To signup, I have only made the username, password, and comfirmation password manitory so users do not need to give information about their email, name, age or bio</li>
+                    <li>The timezone for this website is set to America/Toronto. Click here to see the list of valid<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank"> timezones</a></li>
+                  </ul>  
+            </div>
+          </div>
+
+          <br>
+
+          
+    </div>
+{% endblock content %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+        <div class="container">
+
+          <!-- Search form -->
+          <br>
+          <form method="GET">
+            {{ filter.form|crispy }}
+    
+            <button class="btn btn-outline-info" type="submit">Search</button>
+          </form>
+
+            <div class="row">
+
+              {% for post in posts %}
+              <!-- Post Content Column -->
+              <div class="col-lg-8">
+        
+                <!-- Title -->
+                <h3 class="mt-4">{{ post.title }}</h3>
+        
+                <!-- Author -->
+                <p class="lead">
+                  by
+                  <a href="">{{ post.users }}</a> 
+                  {% if post.users == user %}
+                | <a href="{% url 'post_delete' pk=post.pk %}">Delete</a> |
+                <a href="{% url 'post_update' pk=post.pk %}">Update</a> 
+                {% endif %}
+                </p>
+                <hr>
+                
+                <!-- Date/Time -->
+                <p>Posted on {{ post.date_posted }}</p>
+                <!-- Post Content -->
+                <p>{{ post.description }}</p>
+        
+                <!-- Preview Image -->
+                {% if post.image %}
+                    <img class="img-fluid rounded" src="{{ post.image.url }}" >
+                {% endif %} 
+                <hr>
+
+                <!-- Comments Form -->
+                <a href="{% url 'post_comment' pk=post.pk %}">Comment</a>
+        
+                <!-- Single Comment -->
+                {% for comment in post.comments.all %}
+                <div class="media mb-4">
+                  <div class="media-body">
+                    {% if comment.user.is_staff %}
+                    <h5 class="mt-0">{{ comment.user }}<small> (admin)</small></h5>
+                    {% else %}
+                    <h5 class="mt-0">{{ comment.user }}</h5>
+                    {% endif %}
+                    {{ comment.comment }}
+                  </div>
+                </div>
+                {% endfor %}
+                <hr>
+        
+            </div>
+            {% endfor %}
+
+            </div>
+            <!-- /.row -->
+        
+          </div>
+          <!-- /.container -->
+
+    {% else %}
+    <div class="container">
+      <br>
+          <div class="container">
+          <p>Please Login or Signup for a free account</p>
+          </div>
+    </div>
+    {% endif %}
+{% endblock content %}
