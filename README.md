@@ -2,7 +2,7 @@
 [Website Link](https://photo-website-share.herokuapp.com/)
 
 ### Notes (This is a Backend project)
-Because of many issues with Git and Heroku CLI, there were many unnecessary commits so I decided to make a new git repo with all the files of this project. Unfortunately, I've lost many of my commits however some key features to the website that I've built include: 
+**Because of many issues with Git and Heroku CLI, there were many unnecessary commits so I decided to make a new git repo with all the files of this project. Unfortunately, I've lost many of my commits however some key features to the website that I've built include**: 
 - Custom User Model
 - Relational Database
 - User Authentication (Signup, Login, Logout)
